@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dev Mentors</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                background-color: aquamarine;
+            }
+            .container {
+                max-width: 800px;
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                margin-top: 30px;
+            }   
+
+            .menu-section {
+                min-width: 200px;
+                border: 1px solid black;
+                margin-right: 15px;
+                padding: 20px;
+                background-color: #fff;
+            }
+
+            .menu-items {
+                list-style: none;
+                padding: 0;
+            }
+
+            .main-section {
+            }
+
+            .post {
+                border: 1px solid black;
+                margin-bottom: 10px;
+                background-color: #fff;
+            }
+
+            .blog-title {
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            .post-title {
+                padding: 15px 30px;
+                font-weight: bold;
+                font-size: 28px;
+            }
+
+            .post-content {
+                padding: 15px 30px;           
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu-section">
+                <span class="blog-title">
+                    Neomind Blog
+                </span>
+
+                <ul class="menu-items">
+                    <li>Home</li>
+                    <li>Categorias</li>
+                    <li>Sobre</li>
+                </ul>
+            </div>
+            <div id="posts" class="main-section">
+            </div>
+        </div>
+
+        <script>
+            const postsContainer = document.querySelector("#posts");
+            
+            for (let i = 0; i < 10; i++) {
+                const post = document.createElement("div");
+                post.classList.add("post");
+
+                const postTitle = document.createElement("div");
+                postTitle.classList.add("post-title");
+                postTitle.innerHTML = `Post ${i}`;
+
+                const postContent = document.createElement("div");
+                postContent.classList.add("post-content");
+                postContent.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut porttitor dolor. Praesent vel facilisis enim, quis efficitur mi. Morbi placerat lectus ornare massa porta semper. Morbi dictum lectus quis nunc facilisis, eu ullamcorper felis suscipit. Maecenas faucibus ipsum a justo ullamcorper malesuada. Nam pretium suscipit tincidunt. Aliquam sagittis malesuada ante. Vivamus facilisis odio non mauris blandit volutpat. Vivamus fermentum urna eget dapibus semper. Vestibulum faucibus cursus turpis, a pharetra diam laoreet sollicitudin. Donec id dui porta, varius sapien nec, finibus libero. Nulla consequat vel diam quis placerat. Nam massa augue, cursus non aliquam id, molestie eget metus. Phasellus euismod arcu ex, sed porta tellus elementum vitae.";
+
+                post.appendChild(postTitle);
+                post.appendChild(postContent);
+
+                postsContainer.appendChild(post);
+            }
+        </script>
+    </body>
+</html>
