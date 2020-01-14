@@ -1,8 +1,15 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     background-color: aquamarine;
 }
+
+.blog-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .container {
     max-width: 800px;
     width: 100%;
@@ -10,7 +17,12 @@ html, body {
     display: flex;
     flex-direction: row;
     margin-top: 30px;
-}   
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+}
 
 .menu-section {
     min-width: 200px;
@@ -20,28 +32,18 @@ html, body {
     background-color: #fff;
 }
 
-.menu-items {
-    list-style: none;
-    padding: 0;
-}
-
 .post {
     border: 1px solid black;
     margin-bottom: 10px;
     background-color: #fff;
 }
 
-.blog-title {
-    font-weight: bold;
-    font-size: 20px;
+.post-content {
+    padding: 15px 30px;
 }
 
 .post-title {
     padding: 15px 30px;
     font-weight: bold;
     font-size: 28px;
-}
-
-.post-content {
-    padding: 15px 30px;           
 }
