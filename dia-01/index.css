@@ -1,0 +1,47 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: aquamarine;
+}
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}   
+
+.menu-section {
+    min-width: 200px;
+    border: 1px solid black;
+    margin-right: 15px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+}
+
+.post {
+    border: 1px solid black;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.blog-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.post-title {
+    padding: 15px 30px;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.post-content {
+    padding: 15px 30px;           
+}

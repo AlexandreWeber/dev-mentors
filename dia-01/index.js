@@ -1,28 +1,11 @@
-import postService from './posts.service.js';
+import controller from './controllers/posts.controller.js';
 
-const postsContainer = document.querySelector("#posts");
-            
-const makePost = ({title, content}) => {
-    let post = `
-        <div class="post">
-            <div class="post-title">
-                ${title}
-            </div>
-            <div class="post-content">
-                ${content}
-            </div>
-        </div>
-    `; 
+(async () => {
+    const posts = await controller.getPosts();
     
-    postsContainer.innerHTML += post;
-}
-
-async function getPosts() {
-    const posts = await postService.fetchPosts();
-
     posts.forEach(post => {
-        makePost(post);
+        controller.addPost(post);
     });
-}
+})();
 
-getPosts();
+
