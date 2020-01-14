@@ -1,17 +1,19 @@
 import service from '../services/posts.service.js';
 
-class PostController {
+class PostsController {
 
     postsContainer = undefined;
 
     constructor () {
         this.postsContainer = document.querySelector("#posts");
+        this.intialize();
     }
 
-    addPost = (post) => {
-        const postElements = this.createPostElements(post);
-
-        this.postsContainer.innerHTML += postElements;
+    addPosts = (posts) => {
+        posts.forEach((post) => {
+            const postElements = this.createPostElements(post);
+            this.postsContainer.innerHTML += postElements;
+        });
     };
     
     createPostElements = ({ title, content }) => {
@@ -29,13 +31,17 @@ class PostController {
         return post;
     };
 
-
     getPosts() {
         return new Promise(async (resolve) => {
             const posts = await service.query();
             resolve(posts);
-        });
+        })
+    }
+
+    async intialize() {
+        const posts = await this.getPosts();
+        this.addPosts(posts);
     }
 }
 
-export default new PostController();
+export default new PostsController();

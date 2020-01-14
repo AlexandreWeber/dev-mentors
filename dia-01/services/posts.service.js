@@ -1,4 +1,4 @@
-class Post {
+class Posts {
     query = () => {
         // return new Promise(resolve => {
         //     fetch('http://172.17.1.15:8080/article/recent')
@@ -17,4 +17,4 @@ class Post {
     }
 }
 
-export default new Post();
+export default new Posts();
